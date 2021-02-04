@@ -9,6 +9,23 @@ greatest_increase = {}
 #The greatest decrease in losses (date and amount) over the entire period
 greatest_decrease = {}
 
+
+
+file_path = "./Resources/budgest_data.csv"
+
+with open(file_path) as csvfile:
+    # CSV reader specifies delimiter and variable that holds contents
+    csvreader = csv.reader(csvfile)
+    # Read the header row first(skip this step if there is no header)
+    csv_header = next(csvreader)
+    print(f"CVS Header: {cvs_header}")
+    # Read each row of data after the header
+
+    for row in csvreader:
+        print(row)
+
+
+
 # results should look like
 #----------------------------
 #Total Months: 86
