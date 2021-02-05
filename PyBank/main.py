@@ -10,19 +10,23 @@ greatest_increase = {}
 greatest_decrease = {}
 
 
-
-file_path = "./Resources/budgest_data.csv"
+import csv
+file_path = "./Resources/budget_data.csv"
 
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile)
     # Read the header row first(skip this step if there is no header)
     csv_header = next(csvreader)
-    print(f"CVS Header: {cvs_header}")
+    print(f"CSV Header: {csv_header}")
     # Read each row of data after the header
 
     for row in csvreader:
+        #The total number of months included in the dataset
+        total_months= total_months + 1
         print(row)
+
+
 
 
 
