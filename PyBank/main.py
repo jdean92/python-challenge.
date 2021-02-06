@@ -1,4 +1,4 @@
-
+import csv
 total_months = 0
 
 total_profit_loss_amount = 0.00
@@ -9,8 +9,9 @@ greatest_increase = {"date":"", "amount": 0}
 greatest_decrease = {"date":"", "amount": 0}
 
 
-import csv
+
 file_path = "./Resources/budget_data.csv"
+out_file="./Analysis/output.txt"
 
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
@@ -44,6 +45,12 @@ print("----------------------------")
 print(f"Total Months: {total_months}")
 print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
 
+#write to file
+with open(out_file,'w') as outputFile:
+    outputFile.write("Financial Analysis")
+    outputFile.write("Financial Analysis")
+    outputFile.write("----------------------------")
+    outputFile.write(f"Total Months: {total_months}")
 
 # results should look like
 #----------------------------
