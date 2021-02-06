@@ -44,6 +44,8 @@ print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_months}")
 print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
+print(f"Greatest decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
+
 
 #write to file
 with open(out_file,'w') as outputFile:
