@@ -12,7 +12,7 @@ county = []
 v_count = 0
 count = 0
 v_percent = 0
-cand_list = []
+cand_list = {}
 winner_cand = 0
 vote_won = 0
 
@@ -31,11 +31,11 @@ with open(file_path) as csvfile:
     for w in cand_list:
         #if any ([True for k,v in cand_list.items() ]):
         if w in cand_list:
-            v_count = cand_list[csvreader.append(w[2])]
-            cand_list[csvreader.append(w[2])] = v_count +1
+            v_count = cand_list[w[2]]
+            cand_list[w[2]] = v_count +1
 
         else:  
-            cand_list[csvreader.append(w[2])] = 1
+            cand_list[w[2]] = 1
 
 
             
@@ -50,23 +50,23 @@ with open(file_path) as csvfile:
 
 
 
-print("Election Results")
+#print("Election Results")
 
-print("--------------------------")
+#print("--------------------------")
 
-print(f" Total Votes: {}") 
+#print(f" Total Votes: {}") 
 
-print("--------------------------")
+#print("--------------------------")
 
-for name, v_count in v_count.items():
+#for name, v_count in v_count.items():
     
-    print(f"{name}: {perc_of_candidate[name]} ({v_count})")
+    #print(f"{name}: {perc_of_candidate[name]} ({v_count})")
     
-print("--------------------------")
+#print("--------------------------")
 
-print(f"AND the Winner is: {vote_won}!")
+#print(f"AND the Winner is: {vote_won}!")
 
-print("--------------------------")
+#print("--------------------------")
 
 
 
