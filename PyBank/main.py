@@ -3,7 +3,7 @@ import os
 
 init_profit = 0
 total_profit = 0
-count = 0
+total_months = 0
 total_change = []
 
 file_path = "./Resources/budget_data.csv"
@@ -23,7 +23,13 @@ with open(file_path) as csvfile:
         date = []
         profit = []
        #The net total amount of "Profit/Losses" over the entire period
-       
+    for v in profit:
+        total_profit = total_profit = v
+
+    for c in range(1, len(profit)):
+        total_change.append(int(profit[c])) - int(profit[z-1])
+        
+
         
 
 
