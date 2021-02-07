@@ -5,13 +5,15 @@ import os
 file_path = "./Resources/election_data.csv"
 out_file="./Analysis/output.txt"
 
-
-v_count = []
-v_percent = []
-cand_list = []
-winner_cand = []
 voter_id = []
+voter_can = []
+county = []
 
+v_count = 0
+v_percent = 0
+cand_list = []
+winner_cand = 0
+vote_won = 0
 
 with open(file_path) as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
@@ -23,17 +25,16 @@ with open(file_path) as csvfile:
         #The total number of months included in the dataset
         voter_id = voter_id + 1
         cand_list.append (row[2])
-    for w set(cand_list):
-        winner_cand.append(w)
-        c = cand_list.count(c)
-        t = (c/count)*100
-        v_percent.append(1)
 
-        
+    for w in set(cand_list):
+        cand_list = {'candidate:', 'vote count'}
+        if voter_can > winner_cand:
+            winner_cand = v_count
 
 
 
-print(f"voter id: {voter_id}")
+
+#print(f"vote won: {vote_won}")
 
 #The total number of votes cast
 
