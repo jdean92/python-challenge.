@@ -55,7 +55,7 @@ print(f"total profit:{total_profit}")
 #write to file
 with open(out_file,'w') as outputFile:
     outputFile.write("Financial Analysis")
-    outputFile.write("Financial Analysis")
+    
     outputFile.write("----------------------------")
     outputFile.write(f"Total Months: {total_months}")
     outputFile.write(f"increased profits {maxum_date} {increase_profit}")
