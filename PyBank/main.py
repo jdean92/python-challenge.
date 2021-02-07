@@ -24,11 +24,15 @@ with open(file_path) as csvfile:
         profit = []
        #The net total amount of "Profit/Losses" over the entire period
     for v in profit:
-        total_profit = total_profit = v
+        total_profit = total_profit + v
 
     for c in range(1, len(profit)):
         total_change.append(int(profit[c])) - int(profit[z-1])
-        
+increase_profit = max(total_change)
+decrease_profit = min(total_change)
+maxum_date = date[total_change.index(increase_profit) + 1]
+decrease_date = date[total_change.index(decrease_profit) + 1]
+avgerage_change = sum(total_change) / len(total_change)
 
         
 
@@ -38,8 +42,8 @@ with open(file_path) as csvfile:
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_months}")
-print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
-print(f"Greatest decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
+print
+print
 
 
 #write to file
