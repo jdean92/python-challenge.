@@ -58,6 +58,10 @@ with open(out_file,'w') as outputFile:
     outputFile.write("Financial Analysis")
     outputFile.write("----------------------------")
     outputFile.write(f"Total Months: {total_months}")
+    outputFile.write(f"increased profits {maxum_date} {increase_profit}")
+    outputFile.write(f"decreased profits {decrease_date} {decrease_profit}")
+    outputFile.write(f"avgerage change:{round(avgerage_change,2)}")
+    outputFile.write(f"total profit:{total_profit}")
 
 # results should look like
 #----------------------------
