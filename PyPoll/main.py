@@ -9,8 +9,8 @@ out_file="./Analysis/output.txt"
 v_count = []
 v_percent = []
 cand_list = []
-diffrent_cand = []
-count = []
+winner_cand = []
+voter_id = []
 
 
 with open(file_path) as csvfile:
@@ -21,13 +21,19 @@ with open(file_path) as csvfile:
 
     for row in csvreader:
         #The total number of months included in the dataset
-        cand_list = cand_list + 1
-        diffrent_cand.append (row[0])
-        v_count.append (int(row[1]))
+        voter_id = voter_id + 1
+        cand_list.append (row[2])
+    for w set(cand_list):
+        winner_cand.append(w)
+        c = cand_list.count(c)
+        t = (c/count)*100
+        v_percent.append(1)
+
+        
 
 
 
-print(f"vote count: {v_count}")
+print(f"voter id: {voter_id}")
 
 #The total number of votes cast
 
