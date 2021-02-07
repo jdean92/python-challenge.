@@ -5,6 +5,9 @@ init_profit = 0
 total_profit = 0
 total_months = 0
 total_change = []
+profit = []
+date = []
+
 
 file_path = "./Resources/budget_data.csv"
 out_file="./Analysis/output.txt"
@@ -20,21 +23,22 @@ with open(file_path) as csvfile:
     for row in csvreader:
         #The total number of months included in the dataset
         total_months = total_months + 1
-        date = []
-        profit = []
-       #The net total amount of "Profit/Losses" over the entire period
+        date.append (row[0])
+        profit.append (int(row[1]))
+    
     for v in profit:
         total_profit = total_profit + v
 
     for c in range(1, len(profit)):
         total_change.append(int(profit[c])) - int(profit[z-1])
+
 increase_profit = max(total_change)
 decrease_profit = min(total_change)
 maxum_date = date[total_change.index(increase_profit) + 1]
 decrease_date = date[total_change.index(decrease_profit) + 1]
 avgerage_change = sum(total_change) / len(total_change)
 
-        
+
 
 
 
