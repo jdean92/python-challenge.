@@ -30,7 +30,7 @@ with open(file_path) as csvfile:
         total_profit = total_profit + v
 
     for c in range(1, len(profit)):
-        total_change.append(int(profit[c])) - int(profit[z-1])
+        total_change.append(int(profit[c]) - int(profit[c-1]))
 
 increase_profit = max(total_change)
 decrease_profit = min(total_change)
@@ -46,8 +46,8 @@ avgerage_change = sum(total_change) / len(total_change)
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_months}")
-print
-print
+print(f"increased profits{maxum_date}{increase_profit}")
+print(f"decreased profits{decrease_date}{decreased_profit}")
 
 
 #write to file
