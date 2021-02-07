@@ -10,8 +10,9 @@ voter_can = []
 county = []
 
 v_count = 0
+results = []
 v_percent = 0
-cand_list = []
+cand_list = {}
 winner_cand = 0
 vote_won = 0
 
@@ -23,11 +24,21 @@ with open(file_path) as csvfile:
 
     for row in csvreader:
         #The total number of months included in the dataset
-        voter_id = voter_id + 1
+        #voter_id = voter_id + 1
+        v_count +=1
         cand_list.append (row[2])
 
     for w in set(cand_list):
-        cand_list = {'candidate:', 'vote count'}
+        #if any ([True for k,v in cand_list.items() ]):
+        #if w in cand_list:
+        results.append(w)
+        v_count.append(cand_list.count(w))
+        v_percent.append((cand_list.count(w)/v_count)*100)
+        cand_list +=1
+
+
+        #else:  
+
         if voter_can > winner_cand:
             winner_cand = v_count
 
