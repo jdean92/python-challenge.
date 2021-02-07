@@ -46,9 +46,10 @@ avgerage_change = sum(total_change) / len(total_change)
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_months}")
-print(f"increased profits{maxum_date}{increase_profit}")
-print(f"decreased profits{decrease_date}{decrease_profit}")
-print(f"avgerage change{round(avgerage_change,2)}")
+print(f"increased profits {maxum_date} {increase_profit}")
+print(f"decreased profits {decrease_date} {decrease_profit}")
+print(f"avgerage change:{round(avgerage_change,2)}")
+print(f"total profit:{total_profit}")
 
 
 #write to file
