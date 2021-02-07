@@ -47,7 +47,8 @@ print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_months}")
 print(f"increased profits{maxum_date}{increase_profit}")
-print(f"decreased profits{decrease_date}{decreased_profit}")
+print(f"decreased profits{decrease_date}{decrease_profit}")
+print(f"avgerage change{round(avgerage_change,2)}")
 
 
 #write to file
