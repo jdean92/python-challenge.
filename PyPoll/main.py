@@ -27,18 +27,21 @@ with open(file_path) as csvfile:
     for row in csvreader:
 
         count = count +1
+        everycan.append(row[2])
         
         if row[2] not in cand_list["Candidate"]:
             cand_list["Candidate"].append(row[2])
-            everycan.append(row[2])
+           
 
-     for s in cand_list["Candidate"]:
+    for s in cand_list["Candidate"]:
          cand_list["Votes"].append(everycan.count(s))
     for d in cand_list["Votes"]:
         percent = (d/count)*100
         cand_list["VotePerc"].append(round(percent, 3))
 
-
+    winingvote = max(cand_list["Votes"])
+    voteId = cand_list["Votes"].index(winingvote)
+    winner = cand_list["Candidate"][voteId]
 
 
 #     index = cand_list["Candidate"].index(s)
