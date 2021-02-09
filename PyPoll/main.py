@@ -25,9 +25,23 @@ with open(file_path) as csvfile:
     for row in csvreader:
 
         count = count +1
+        cand_list['Candidates'].append
+        if row[2] not in cand_list["Candidate"]:
+            cand_list["Candidate"].append(row[2])
+
+for s in cand_list["Candidate"]:
+    index = cand_list["Candidate"].index(s)
+    print(f"{s}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
+
+with open(out_file,'w') as outputFile:
+    outputFile.write("Election results")
     for u in cand_list["Candidate"]:
         index = cand_list["Candidate"].index(u)
         file_path.write(f"{u}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
+        print(f"{u}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
+
+
+
 
         #The total number of months included in the dataset
         #voter_id = voter_id + 1
@@ -43,9 +57,6 @@ with open(file_path) as csvfile:
 
         # else:  
         #     cand_list[w[2]] = 1
-
-
-            
         # if voter_can > winner_cand:
         #     winner_cand = v_count
 
@@ -53,8 +64,9 @@ with open(file_path) as csvfile:
         #     c = cand_list.count(w)
         #     v_count.append(c)
         #     d = (c/count)*100
-for i in len(cand_list):
-    print (f"{cand_list[i]}: {v_percent}% ")
+#for i in len(cand_list):
+    #print (f"{cand_list[i]}: {v_percent}% ")
+
 
 
 
@@ -68,20 +80,15 @@ print("Election Results")
 
 print("--------------------------")
 
-#print(f" Total Votes: {}") 
 
-print("--------------------------")
-
-#for name, v_count in v_count.items():
-    
-#print(f"{winner_cand}: {v_percent[winner_cand]} ({v_count})")
-    
-#print("--------------------------")
-
-#print(f"AND the Winner is: {v_count}!")
-
-#print("--------------------------")
-
+# with open(out_file,'w') as outputFile:
+#     outputFile.write("Financial Analysis")
+    # outputFile.write("----------------------------")
+    # outputFile.write(f"Total Months: {total_months}")
+    # outputFile.write(f"increased profits {maxum_date} {increase_profit}")
+    # outputFile.write(f"decreased profits {decrease_date} {decrease_profit}")
+    # outputFile.write(f"avgerage change:{round(avgerage_change,2)}")
+    # outputFile.write(f"total profit:{total_profit}")
 
 
 
