@@ -14,7 +14,7 @@ v_count = 0
 count = 0
 v_percent = 0
 cand_list = {"Candidate": [], "Votes": [], "Vote Perc": []}
-winner_cand = 0
+winner_cand = ""
 
 
 
@@ -37,11 +37,28 @@ with open(file_path) as csvfile:
          cand_list["Votes"].append(everycan.count(s))
     for d in cand_list["Votes"]:
         percent = (d/count)*100
-        cand_list["VotePerc"].append(round(percent, 3))
+        cand_list["Vote Perc"].append(round(percent, 3))
 
     winingvote = max(cand_list["Votes"])
     voteId = cand_list["Votes"].index(winingvote)
-    winner = cand_list["Candidate"][voteId]
+    winner_cand = cand_list["Candidate"][voteId]
+
+print("Election Results\n")
+print("----------------------------\n")
+print(f"Total Votes: {count}\n")
+print("----------------------------\n")
+for m in cand_list["Candidate"]:
+    index = cand_list["Candidate"].index(m)
+    print(f"{m}: {cand_list['Vote Perc'][index]}% ({cand_list['Votes'][index]})\n")
+print("----------------------------\n")
+print(f"Winner: {winner_cand}\n")
+print("----------------------------\n")
+
+
+
+
+
+
 
 
 #     index = cand_list["Candidate"].index(s)
@@ -49,10 +66,15 @@ with open(file_path) as csvfile:
 
 with open(out_file,'w') as outputFile:
     outputFile.write("Election results")
+    outputFile.write("----------------------------\n")
+    outputFile(f"Total Votes: {count}\n")
     for u in cand_list["Candidate"]:
         index = cand_list["Candidate"].index(u)
-        file_path.write(f"{u}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
-            (f"{u}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
+        outputFile.write(f"{u}: {cand_list['Vote Perc'][index]}% ({cand_list['Votes'][index]})\n")
+    outputFile("----------------------------\n")
+    outputFile(f"Winner: {winner_cand}\n")
+    outputFile("----------------------------\n")
+   
 
 
 
@@ -90,9 +112,9 @@ with open(out_file,'w') as outputFile:
 # print(f"avgerage change:{round(avgerage_change,2)}")
 # print(f"total profit:{total_profit}")
 
-print("Election Results")
+# print("Election Results")
 
-print("--------------------------")
+# print("--------------------------")
 
 
 # with open(out_file,'w') as outputFile:
