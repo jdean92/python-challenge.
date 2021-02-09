@@ -67,13 +67,13 @@ print("----------------------------\n")
 with open(out_file,'w') as outputFile:
     outputFile.write("Election results")
     outputFile.write("----------------------------\n")
-    outputFile(f"Total Votes: {count}\n")
+    outputFile.write(f"Total Votes: {count}\n")
     for u in cand_list["Candidate"]:
         index = cand_list["Candidate"].index(u)
         outputFile.write(f"{u}: {cand_list['Vote Perc'][index]}% ({cand_list['Votes'][index]})\n")
-    outputFile("----------------------------\n")
-    outputFile(f"Winner: {winner_cand}\n")
-    outputFile("----------------------------\n")
+    outputFile.write("----------------------------\n")
+    outputFile.write(f"Winner: {winner_cand}\n")
+    outputFile.write("----------------------------\n")
    
 
 
