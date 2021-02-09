@@ -8,12 +8,14 @@ out_file="./Analysis/output.txt"
 voter_id = []
 voter_can = []
 county = []
+everycan = []
 
 v_count = 0
 count = 0
 v_percent = 0
 cand_list = {"Candidate": [], "Votes": [], "Vote Perc": []}
 winner_cand = 0
+
 
 
 with open(file_path) as csvfile:
@@ -25,20 +27,29 @@ with open(file_path) as csvfile:
     for row in csvreader:
 
         count = count +1
-        cand_list['Candidates'].append
+        
         if row[2] not in cand_list["Candidate"]:
             cand_list["Candidate"].append(row[2])
+            everycan.append(row[2])
 
-for s in cand_list["Candidate"]:
-    index = cand_list["Candidate"].index(s)
-    print(f"{s}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
+     for s in cand_list["Candidate"]:
+         cand_list["Votes"].append(everycan.count(s))
+    for d in cand_list["Votes"]:
+        percent = (d/count)*100
+        cand_list["VotePerc"].append(round(percent, 3))
+
+
+
+
+#     index = cand_list["Candidate"].index(s)
+#     print(f"{s}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
 
 with open(out_file,'w') as outputFile:
     outputFile.write("Election results")
     for u in cand_list["Candidate"]:
         index = cand_list["Candidate"].index(u)
         file_path.write(f"{u}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
-        print(f"{u}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
+            (f"{u}: {cand_list['Vote Perc'][indx]}% ({cand_list['Votes'][indx]})\n")
 
 
 
